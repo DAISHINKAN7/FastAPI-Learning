@@ -18,3 +18,17 @@ def about():
             'about page': 'This is an about page'
         }
     }
+
+@app.get('/blog/unpublished')
+def unpublished():
+    return {'data' : "All unpublished blogs"}
+
+@app.get('/blog/{id}')   #parenthesis for dynamic routing
+def show(id: int):
+    return {'data': id}
+
+
+@app.get('/blog/{id}/comments')
+def comments(id):
+    #Fetch comments of blog with id = id
+    return {'data' : {'1', '2'}}
